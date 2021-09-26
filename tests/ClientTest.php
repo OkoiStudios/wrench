@@ -95,16 +95,13 @@ class ClientTest extends BaseTest
 
             $this->assertNull($instance->receive(), 'Receive before connect');
 
-            $success = $instance->connect();
-            $this->assertTrue($success, 'Client can connect to test server');
+            $this->assertTrue($instance->connect(), 'Client can connect to test server');
             $this->assertTrue($instance->isConnected());
 
             $this->assertFalse($instance->connect(), 'Double connect');
-
             $this->assertTrue($instance->isConnected());
 
             $this->assertFalse((bool) $instance->receive(), 'No data');
-
             $this->assertTrue($instance->isConnected());
 
             $bytes = $instance->sendData('foobar', Protocol::TYPE_TEXT);
