@@ -239,7 +239,7 @@ abstract class AbstractSocket extends Configurable implements ResourceInterface
                 // feof means socket has been closed
                 // also, sometimes in long running processes the system seems to kill the underlying socket
                 if (!$this->socket || \feof($this->socket)) {
-                    var_dump('a');
+                    \var_dump('a');
                     $this->disconnect();
 
                     return $buffer;
@@ -254,7 +254,7 @@ abstract class AbstractSocket extends Configurable implements ResourceInterface
 
                 // fread FALSE means socket has been closed
                 if (false === $result) {
-                    var_dump('b');
+                    \var_dump('b');
                     $this->disconnect();
 
                     return $buffer;
@@ -264,7 +264,7 @@ abstract class AbstractSocket extends Configurable implements ResourceInterface
 
                 // feof means socket has been closed
                 if (\feof($this->socket)) {
-                    var_dump('c');
+                    \var_dump('c');
                     $this->disconnect();
 
                     return $buffer;
