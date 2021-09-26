@@ -105,8 +105,6 @@ class ClientTest extends BaseTest
 
             $bytes = $instance->sendData('foobar', Protocol::TYPE_TEXT);
 
-            \var_dump($bytes);
-
             $this->assertTrue($bytes >= 6, 'sent text frame');
 
             $bytes = $instance->sendData('baz', Protocol::TYPE_TEXT);
