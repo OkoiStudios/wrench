@@ -101,6 +101,8 @@ class ClientTest extends BaseTest
 
             $this->assertFalse($instance->connect(), 'Double connect');
 
+            $this->assertTrue($instance->isConnected());
+
             $this->assertFalse((bool) $instance->receive(), 'No data');
 
             $this->assertTrue($instance->isConnected());
