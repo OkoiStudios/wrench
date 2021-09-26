@@ -121,9 +121,9 @@ abstract class Payload
 
         foreach ($this->frames as $frame) {
             $buffer = $frame->getFrameBuffer();
-            var_dump($buffer);
+            \var_dump($buffer);
             $result = $socket->send($buffer);
-            var_dump($result);
+            \var_dump($result);
             $success = $success && null !== $result;
         }
 
